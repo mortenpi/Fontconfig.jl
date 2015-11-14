@@ -14,7 +14,3 @@ before_install:
         sudo apt-get update -qq -y;
         sudo apt-get install libfontconfig1;
       fi
-script:
-    - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-    - julia -e 'Pkg.init(); Pkg.clone(pwd()); Pkg.test("Fontconfig"; coverage=true)'
-
