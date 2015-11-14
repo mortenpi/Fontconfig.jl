@@ -1,6 +1,8 @@
 using BinDeps
 @BinDeps.setup
 
+group = library_group("fontconfig")
+
 deps = [
     freetype = library_dependency("freetype", aliases = ["libfreetype"], runtime = false, group = group)
     fontconfig = library_dependency("fontconfig", aliases = ["libfontconfig-1", "libfontconfig", "libfontconfig.so.1"], depends = [freetype], runtime = false, group = group)
